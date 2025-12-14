@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import "tailwindcss";
+
+:root{
+    --color-almond-silk-50: #f8f0ec;
+    --color-almond-silk-100: #f2e1d9;
+    --color-almond-silk-200: #e4c4b4;
+    --color-almond-silk-300: #d7a68e;
+    --color-almond-silk-400: #ca8968;
+    --color-almond-silk-500: #bd6b42;
+    --color-almond-silk-600: #975635;
+    --color-almond-silk-700: #714028;
+    --color-almond-silk-800: #4b2b1b;
+    --color-almond-silk-900: #26150d;
+    --color-almond-silk-950: #1a0f09;
+
+    --color-coffee-bean-50: #f6f1ef;
+    --color-coffee-bean-100: #ece3df;
+    --color-coffee-bean-200: #d9c7bf;
+    --color-coffee-bean-300: #c6ab9f;
+    --color-coffee-bean-400: #b48f7e;
+    --color-coffee-bean-500: #a1735e;
+    --color-coffee-bean-600: #815c4b;
+    --color-coffee-bean-700: #604539;
+    --color-coffee-bean-800: #402e26;
+    --color-coffee-bean-900: #201713;
+    --color-coffee-bean-950: #16100d;
+
+    --color-desert-sand-50: #f8f0ec;
+    --color-desert-sand-100: #f1e2da;
+    --color-desert-sand-200: #e4c4b4;
+    --color-desert-sand-300: #d6a78f;
+    --color-desert-sand-400: #c98969;
+    --color-desert-sand-500: #bb6c44;
+    --color-desert-sand-600: #965636;
+    --color-desert-sand-700: #704129;
+    --color-desert-sand-800: #4b2b1b;
+    --color-desert-sand-900: #25160e;
+    --color-desert-sand-950: #1a0f09;
+
+    --color-dusty-taupe-50: #f4f1f0;
+    --color-dusty-taupe-100: #eae4e1;
+    --color-dusty-taupe-200: #d5c9c3;
+    --color-dusty-taupe-300: #c0aea5;
+    --color-dusty-taupe-400: #aa9388;
+    --color-dusty-taupe-500: #95786a;
+    --color-dusty-taupe-600: #776055;
+    --color-dusty-taupe-700: #5a483f;
+    --color-dusty-taupe-800: #3c302a;
+    --color-dusty-taupe-900: #1e1815;
+    --color-dusty-taupe-950: #15110f;
+
+    --color-linen-50: #faf3ea;
+    --color-linen-100: #f6e7d5;
+    --color-linen-200: #edcfab;
+    --color-linen-300: #e3b782;
+    --color-linen-400: #daa058;
+    --color-linen-500: #d1882e;
+    --color-linen-600: #a76d25;
+    --color-linen-700: #7d511c;
+    --color-linen-800: #543612;
+    --color-linen-900: #2a1b09;
+    --color-linen-950: #1d1306;
+
+}
+
+/* Google fonts */
+.delius-swash-caps-regular {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
