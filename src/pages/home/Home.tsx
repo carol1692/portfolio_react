@@ -33,11 +33,11 @@ export default function Home() {
 						<img src="https://ik.imagekit.io/5vd9mfrfv/img/char_redimensionado.gif" className="absolute bottom-0 left-1/2 -translate-x-1/2" alt="cute girl waving" />
 					</section>
 					<section className="montserrat-font p-4 flex flex-col justify-center items-center" >
-					<h1 className="montserrat-font p-4 text-2xl">Worked as:</h1>
-					
-					<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/> Web developer </p>
-					<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/>Integration tester</p>
-					<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/>Infrastructure Specialist</p>
+						<h1 className="montserrat-font p-4 text-2xl">Worked as:</h1>
+						
+						<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/> Web developer </p>
+						<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/>Integration tester</p>
+						<p className='pt-2 flex text-xl'> <DotOutlineIcon size={32}/>Infrastructure Specialist</p>
 					</section>
 				</section> 
 

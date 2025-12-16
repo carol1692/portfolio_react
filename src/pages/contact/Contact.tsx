@@ -1,9 +1,9 @@
-import { MinusIcon, RectangleIcon, XIcon } from '@phosphor-icons/react'
-import Layout from '../../components/layout/Layout'
+import { MinusIcon, RectangleIcon, XIcon } from "@phosphor-icons/react";
+import Layout from "../../components/layout/Layout";
 
-export default function Skills() {
+export default function Contact() {
   return (
-    <Layout>
+     <Layout>
         <div className="flex flex-col justify-between content-around w-full">
               <div className=' h-full'>
                 <div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
@@ -37,5 +37,6 @@ export default function Skills() {
           </div>
     </Layout>
     
+
   )
 }
