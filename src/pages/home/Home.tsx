@@ -1,3 +1,4 @@
+import IconesTootip from '../../components/iconesTooltip/IconesTootip';
 import Layout from '../../components/layout/Layout'
 import { DotOutlineIcon, MinusIcon, RectangleIcon, XIcon} from "@phosphor-icons/react";
 
@@ -49,68 +50,10 @@ export default function Home() {
 					</section>
 					<section className='flex items-center justify-center overflow-hidden gap-6 pb-1'>
 						{/* typescript */}
-						<div className="group relative">
-							<img
-								src="https://img.icons8.com/?size=50&id=uJM6fQYqDaZK&format=png&color=000000"
-								alt="Tailwind"
-							/>
-
-							<div
-								className="
-									absolute inset-0
-									flex items-center justify-center
-									text-(--color-desert-sand-800) text-xs font-semibold
-									opacity-0 scale-95
-									group-hover:opacity-100 group-hover:scale-100
-									transition-all duration-200
-									bg-white/80 rounded
-								"
-							>
-								Typescript
-							</div>
-						</div>
-						{/* react */}
-						<div className="group relative">
-							<img src="https://img.icons8.com/?size=50&id=123603&format=png&color=000000" alt="" className="object-contain"/>
-							<div
-								className="absolute inset-0
-								flex items-center justify-center
-								text-(--color-desert-sand-800) text-xs font-semibold
-								opacity-0 scale-95
-								group-hover:opacity-100 group-hover:scale-100
-								transition-all duration-200
-								bg-white/80 rounded">
-								React JS
-							</div>
-						</div>
-						{/* tailwind */}
-						<div className="group relative">
-							<img src="https://img.icons8.com/?size=50&id=x7XMNGh2vdqA&format=png&color=000000" alt="" className="object-contain"/>
-							<div
-								className="absolute inset-0
-								flex items-center justify-center
-								text-(--color-desert-sand-800) text-xs font-semibold
-								opacity-0 scale-95
-								group-hover:opacity-100 group-hover:scale-100
-								transition-all duration-200
-								bg-white/80 rounded">
-								Tailwind CSS
-							</div>
-						</div>
-						{/* google fonts */}
-						<div className="group relative">
-							<img src="https://img.icons8.com/?size=50&id=uY6QHPV8g5bd&format=png&color=000000" alt="" className="object-contain"/>
-							<div
-								className="absolute inset-0
-								flex items-center justify-center
-								text-(--color-desert-sand-800) text-xs font-semibold
-								opacity-0 scale-95
-								group-hover:opacity-100 group-hover:scale-100
-								transition-all duration-200
-								bg-white/80 rounded">
-								Google Fonts
-							</div>
-						</div>
+						<IconesTootip urlIcon={'https://img.icons8.com/?size=50&id=uJM6fQYqDaZK&format=png&color=000000'} name={'Typescript'} />
+						<IconesTootip urlIcon={'https://img.icons8.com/?size=50&id=123603&format=png&color=000000'} name={'React'} />
+						<IconesTootip urlIcon={'https://img.icons8.com/?size=50&id=x7XMNGh2vdqA&format=png&color=000000'} name={'Tailwind CSS'} />
+						<IconesTootip urlIcon={'https://img.icons8.com/?size=50&id=uY6QHPV8g5bd&format=png&color=000000'} name={'Google Fonts'} />
 					</section>
 			</section>
 		</div>

@@ -13,11 +13,9 @@ export default function Contact() {
                   <div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
                     <RectangleIcon size={22} />
                   </div>
-                  
                   <div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
                     <XIcon size={22} />
                   </div>
-                  
                 </div>
                 
                 {/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
