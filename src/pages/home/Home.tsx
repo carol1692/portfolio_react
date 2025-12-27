@@ -8,7 +8,7 @@ export default function Home() {
     <Layout>
         <div className="flex flex-col justify-between content-around w-full">
 			
-			<div className='h-full bg-amber-500'>
+			<div className='h-full'>
 				<div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2 x'>
 					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
 						<MinusIcon size={22} />
@@ -24,7 +24,7 @@ export default function Home() {
 				</div>
 				
 				{/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
-				<section className='flex h-full md:h-4/6 bg-violet-400 text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
+				<section className='flex h-full md:h-4/6 text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
 					<div className='flex flex-col w-full gap-2'>
 						<section className='flex flex-col w-full p-2 h-1/3 gap-3'>
 							<h1 className="montserrat-font ps-8 pt-4 text-4xl md:text-2xl"> Hi, I'm Ana </h1>
