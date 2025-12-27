@@ -1,41 +1,231 @@
-import { MinusIcon, RectangleIcon, XIcon } from '@phosphor-icons/react'
+import { DotOutlineIcon, MinusIcon, RectangleIcon, XIcon } from '@phosphor-icons/react'
 import Layout from '../../components/layout/Layout'
+import { useState } from 'react'
+import IconesTootip from '../../components/iconesTooltip/IconesTootip'
+
+interface Icons{
+	alt: string
+	urlIcon: string
+}
+
+interface Habilidades{
+	id:number
+	nomeCategoria: string
+	habilidades: Icons[],
+}
+
+const habilidades: Habilidades[] = [
+  {
+	id:0,
+   	nomeCategoria:"Programming Languages",
+	habilidades: [
+		{alt:'python', urlIcon: 'https://img.icons8.com/?size=90&id=13441&format=png&color=000000'},
+		{alt:'javascript', urlIcon:'https://img.icons8.com/?size=90&id=108784&format=png&color=000000'},
+		{alt:'java', urlIcon:'https://img.icons8.com/?size=90&id=13679&format=png&color=000000'}
+	]
+  },
+  {
+	id:1,
+   	nomeCategoria:"Front-end",
+	habilidades: [
+		{alt:'Javascript', urlIcon: 'https://img.icons8.com/?size=90&id=108784&format=png&color=000000bootstrap'},
+		{alt:'Bootstrap', urlIcon:'https://img.icons8.com/?size=90&id=PndQWK6M1Hjo&format=png&color=000000'},
+		{alt:'HTML', urlIcon:'https://img.icons8.com/?size=90&id=20909&format=png&color=000000'},
+		{alt:'CSS', urlIcon:'https://img.icons8.com/?size=90&id=21278&format=png&color=000000'},
+		{alt:'React', urlIcon:'https://img.icons8.com/?size=90&id=123603&format=png&color=000000'}
+	]
+  },
+  {
+	id:2,
+   	nomeCategoria:"Frameworks & Libraries",
+	habilidades: [
+		{ alt: 'Flask', urlIcon: 'https://img.icons8.com/?size=90&id=MHcMYTljfKOr&format=png&color=000000' },
+		{ alt: 'Django', urlIcon: 'https://img.icons8.com/?size=90&id=mUBILbYvUMq8&format=png&color=000000' },
+		{ alt: 'Spring Boot', urlIcon: 'https://img.icons8.com/?size=90&id=A3Ulk2RcONKs&format=png&color=000000' },
+		{ alt: 'Hibernate', urlIcon: 'https://ik.imagekit.io/5vd9mfrfv/Hibernate.png ' },
+		{ alt: 'SQLAlchemy', urlIcon: 'https://icon.icepanel.io/Technology/png-shadow-512/SQLAlchemy.png' },
+		{ alt: 'JPA', urlIcon: null }
+	]
+  },
+  {
+	id:3,
+   	nomeCategoria:" Testing & Management Tools",
+	habilidades:[
+		{ alt: 'Pytest', urlIcon: 'https://icon.icepanel.io/Technology/svg/pytest.svg' },
+		{ alt: 'JUnit', urlIcon: 'https://icon.icepanel.io/Technology/svg/JUnit.svg' },
+		{ alt: 'SOAP UI', urlIcon: null },
+		{ alt: 'Insomnia', urlIcon: 'https://icon.icepanel.io/Technology/svg/Insomnia.svg' },
+		{ alt: 'IBM Tivoli Workload Scheduler (TWS)', urlIcon: null },
+		{ alt: 'JIRA', urlIcon: 'https://icon.icepanel.io/Technology/svg/Jira.svg' }
+	]
+
+  },
+  {
+	id:4,
+   	nomeCategoria:"Servers",
+	habilidades: [
+		{alt:'Linux', urlIcon: 'https://icon.icepanel.io/Technology/png-shadow-512/Linux.png'},
+		{alt:'Windows', urlIcon:'https://img.icons8.com/?size=100&id=108792&format=png&color=000000'},
+		{alt:'Red Hat', urlIcon:'https://icon.icepanel.io/Technology/svg/Red-Hat.svg'},
+		{alt:'AIX', urlIcon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/IBM_AIX_logo_%28pre_2021%29.svg/960px-IBM_AIX_logo_%28pre_2021%29.svg.png?20240424014322'},
+	]
+  },
+   {
+	id:5,
+   	nomeCategoria:"Databases",
+	habilidades: [
+		{alt:'SQL', urlIcon: 'https://img.icons8.com/?size=100&id=J6KcaRLsTgpZ&format=png&color=000000'},
+		{alt:'MySQL', urlIcon:'https://img.icons8.com/?size=100&id=hYoELNwniGhi&format=png&color=000000'},
+		{alt:'PostgreSQL', urlIcon:'https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000'},
+		{alt:'IBM DB2', urlIcon: 'https://www.db2tutorial.com/wp-content/uploads/2019/03/db2-tutorial.png'},
+	]
+  },
+  {
+	id:6,
+   	nomeCategoria:" Methodologies & Logic",
+	habilidades: [
+		{alt:'Agile', urlIcon: 'https://img.icons8.com/?size=100&id=RupzjxT3GmGw&format=png&color=000000'},
+		{alt:'SaFe', urlIcon:'https://styles.redditmedia.com/t5_i5z8a/styles/communityIcon_qezdzuogm36a1.png'},
+		{alt:'Scrum', urlIcon:'https://img.icons8.com/?size=100&id=knNqKYtdOBlU&format=png&color=000000'},
+		{alt:'Logic Programming', urlIcon: 'https://img.icons8.com/?size=100&id=53381&format=png&color=000000'},
+	]
+  },
+  {
+	id:7,
+   	nomeCategoria:"IDEs & Tools",
+	habilidades: [
+		{alt:'VSCode', urlIcon: 'https://icon.icepanel.io/Technology/svg/Visual-Studio-Code-%28VS-Code%29.svg'},
+		{alt:'Spring Tool Suite', urlIcon:'https://spring.io/img/projects/spring-tool.svg'},
+		{alt:'Vi/Vim', urlIcon:'https://icon.icepanel.io/Technology/svg/Vim.svg'},
+	]
+  },
+  {
+	id:8,
+   	nomeCategoria:"Version Control & DevOps",
+	habilidades: [
+		{alt:'Git', urlIcon: 'https://icon.icepanel.io/Technology/svg/Git.svg'},
+		{alt:'GitHub', urlIcon:'https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png'},
+		{alt:'GitLab', urlIcon:'https://icon.icepanel.io/Technology/svg/GitLab.svg'},
+		{alt:'AWS EC2', urlIcon:'https://icon.icepanel.io/AWS/svg/Compute/EC2.svg'},
+		{alt:'Jenkins', urlIcon:'https://icon.icepanel.io/Technology/svg/Jenkins.svg'},
+	]
+  },
+]
 
 export default function Skills() {
-  return (
-    <Layout>
-        <div className="flex flex-col justify-between content-around w-full">
-              <div className=' h-full'>
-                <div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
-                  <div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
-                    <MinusIcon size={22} />
-                  </div>
-                  <div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-                    <RectangleIcon size={22} />
-                  </div>
-                  
-                  <div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-                    <XIcon size={22} />
-                  </div>
-                  
-                </div>
-                
-                {/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
-                <section className='flex h-9/10 bg-white text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
-                  <section className='relative w-2/3 overflow-hidden'>
-                   <img src=" https://ik.imagekit.io/5vd9mfrfv/img/char_working.gif?updatedAt=1765651663342" className="absolute bottom-0 left-1/2 -translate-x-1/2" alt="cute girl waving" />
-                  </section>
-                  <section className="montserrat-font p-4 flex flex-col justify-center items-center" >
-                    <p className='pt-2 flex text-xl'>Working to build</p>
-                    <p className='pt-2 flex text-xl'> this page..</p>
-                  </section>
-                
-               
-               
-                </section>
-              </div>
-          </div>
+	
+	const [skillsInfo, setSkillsInfo] = useState([])
+	const [visivel, setVisivel] = useState(false);
+	const [categoriaAtiva, setCategoriaAtiva] = useState<string | null>(null);
+	return (
+	<>
+	<Layout>
+	 <div className="flex flex-col w-full gap-2 p-3">
+			<section className='flex flex-col text-(--color-desert-sand-800) gap-2 '>
+				<div className='h-full grid grid-cols-3 gap-3 bg-white/50 p-6'>
+					{habilidades.map(
+						(items)=>(
+							<button
+								key={items.id}
+								onClick={() => {
+									setVisivel(true);
+									setSkillsInfo(items.habilidades);
+									setCategoriaAtiva(items.nomeCategoria);
+								}}
+								className={`
+									silkscreen-regular text-sm border-2 rounded-md p-2
+									transition-all hover:scale-105
+									${
+									categoriaAtiva === items.nomeCategoria
+										? "bg-(--color-puce-300)"
+										: "bg-transparent"
+									}
+									hover:bg-(--color-puce-300)
+								`}
+								>
+								{items.nomeCategoria}
+								</button>
+
+						)
+					)}
+				</div>
+			</section>
+			{visivel && (
+			<div id='skillInfo' className='h-full'>
+				<div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
+					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
+						<MinusIcon size={22} />
+					</div>
+					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+						<RectangleIcon size={22} />
+					</div>
+					
+					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+						<XIcon size={22} />
+					</div>
+					
+				</div>
+			
+				{/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
+				<section className='flex h-5/6 bg-white items-center justify-center text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2 gap-4 text-xl' >
+					{skillsInfo.map(
+						(skills)=>(
+							
+							<IconesTootip urlIcon={skills.urlIcon} name={skills.alt} /> 
+							
+							
+							
+						)
+					)}	
+					
+				</section> 
+
+			</div>
+			)}
+		</div>
     </Layout>
+		{/* <Layout>
+			<div className="grid grid-cols-3 justify-between content-around gap-2">
+			<div className="flex flex-col col-3 gap-2">
+				{habilidades.map(
+					(items)=>(
+						<button className='silkscreen-regular border-2 rounded-md'>{items.nomeCategoria} </button>
+						<div>
+							<div className='flex justify-between items-center pt-1 pb-1 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
+								<span className='silkscreen-regular ps-1 pe-1'> {items.nomeCategoria} </span>
+								<div className="flex gap-0.5">
+									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
+										<MinusIcon size={22} />
+									</div>
+									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+										<RectangleIcon size={22} />
+									</div>
+									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+										<XIcon size={22} />
+									</div>
+
+								</div>
+								
+							</div>
+							<section className='bg-white text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
+								<div className='flex flex-wrap gap-4 max-w-md'>
+									{items.habilidades.map(
+										(skills)=>(
+											<IconesTootip urlIcon={skills.urlIcon} name={skills.alt} />
+										)
+									)}	
+								</div>
+							</section>
+						</div>
+					)
+				)}
+				
+			</div>
+		
+		
+			
+		</Layout> */}
+	</>
     
   )
 }

@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
-        <div className="text-(--color-almond-silk-700) silkscreen-regular h-[5vh]">
-           <div className="flex justify-center p-2 gap-6">
+        <div className="text-(--color-almond-silk-700) silkscreen-regular md:min-h-16">
+           <div className="flex justify-center pt-5 gap-3 md:gap-6 flex-wrap">
                <NavLink
                     to="/"
                     className={({ isActive }) => `${isActive? "text-(--color-coffee-bean-800:) border-b-2": "text-(--color-almond-silk-700) hover:text-(--color-desert-sand-800) hover:scale-105"}`} 

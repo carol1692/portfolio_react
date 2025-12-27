@@ -1,12 +1,13 @@
 interface IconesTootipProps {
     urlIcon: string
     name: string
+   
 }
 
 export default function IconesTootip({urlIcon, name}: IconesTootipProps) {
   return (
-    <div className="group relative">
-        <img
+    <div className="group relative w-20 sm-4 p-2">
+        <img 
             src={urlIcon}
             alt={name}
         />
