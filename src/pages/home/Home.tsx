@@ -24,7 +24,7 @@ export default function Home() {
 				</div>
 				
 				{/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
-				<section className='flex h-full md:h-4/6 text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
+				<section className='flex h-full bg-white md:h-4/6 text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
 					<div className='flex flex-col w-full gap-2'>
 						<section className='flex flex-col w-full p-2 h-1/3 gap-3'>
 							<h1 className="montserrat-font ps-8 pt-4 text-4xl md:text-2xl"> Hi, I'm Ana </h1>
