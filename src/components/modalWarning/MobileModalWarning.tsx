@@ -4,7 +4,7 @@ export function MobileModalWarning() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 1000 || window.innerHeight < 800) {
+    if (window.innerWidth < 1025) {
       setOpen(true);
     }
   }, []);
