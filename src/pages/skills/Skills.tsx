@@ -118,114 +118,82 @@ export default function Skills() {
 	const [visivel, setVisivel] = useState(false);
 	const [categoriaAtiva, setCategoriaAtiva] = useState<string | null>(null);
 	return (
-	<>
+	
 	<Layout>
-	 <div className="flex flex-col w-full gap-2 p-3">
-			<section className='flex flex-col text-(--color-desert-sand-800) gap-2 '>
-				<div className='h-full grid grid-cols-3 gap-3 bg-white/50 p-6'>
-					{habilidades.map(
-						(items)=>(
-							<button
-								key={items.id}
-								onClick={() => {
-									setVisivel(true);
-									setSkillsInfo(items.habilidades);
-									setCategoriaAtiva(items.nomeCategoria);
-								}}
-								className={`
-									silkscreen-regular text-sm border-2 rounded-md p-2
-									transition-all hover:scale-105
-									${
-									categoriaAtiva === items.nomeCategoria
-										? "bg-(--color-puce-300)"
-										: "bg-transparent"
-									}
-									hover:bg-(--color-puce-300)
-								`}
-								>
-								{items.nomeCategoria}
-								</button>
+		<div className="w-full h-screen flex flex-col justify-between content-around">
+			<div>
+				<section className='flex flex-col text-(--color-desert-sand-800) gap-2'>
+					{/* buttons */}
+					<div className='lg:h-1/3 grid grid-cols-3 gap-3 bg-white/50 p-6'>
+						{habilidades.map(
+							(items)=>(
+								<button
+									key={items.id}
+									onClick={() => {
+										setVisivel(true);
+										setSkillsInfo(items.habilidades);
+										setCategoriaAtiva(items.nomeCategoria);
+									}}
+									className={`
+										silkscreen-regular flex-wrap xl:text-sm lg:text-xs border-2 rounded-md xl:p-2
+										transition-all hover:scale-105
+										${
+										categoriaAtiva === items.nomeCategoria
+											? "bg-(--color-puce-300)"
+											: "bg-transparent"
+										}
+										hover:bg-(--color-puce-300)
+									`}
+									>
+									{items.nomeCategoria}
+									</button>
 
-						)
-					)}
-				</div>
-			</section>
-			{visivel && (
-			<div id='skillInfo' className='h-full'>
-				<div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
-					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
-						<MinusIcon size={22} />
+							)
+						)}
 					</div>
-					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-						<RectangleIcon size={22} />
-					</div>
-					
-					<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-						<XIcon size={22} />
-					</div>
-					
-				</div>
-			
-				{/* <hr className="w-full text-(--color-desert-sand-700) border"/> */}
-				<section className='flex h-5/6 bg-white items-center justify-center text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2 gap-4 text-xl' >
-					{skillsInfo.map(
-						(skills)=>(
-							
-							<IconesTootip urlIcon={skills.urlIcon} name={skills.alt} /> 
-							
-							
-							
-						)
-					)}	
-					
-				</section> 
-
-			</div>
-			)}
-		</div>
-    </Layout>
-		{/* <Layout>
-			<div className="grid grid-cols-3 justify-between content-around gap-2">
-			<div className="flex flex-col col-3 gap-2">
-				{habilidades.map(
-					(items)=>(
-						<button className='silkscreen-regular border-2 rounded-md'>{items.nomeCategoria} </button>
-						<div>
-							<div className='flex justify-between items-center pt-1 pb-1 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
-								<span className='silkscreen-regular ps-1 pe-1'> {items.nomeCategoria} </span>
-								<div className="flex gap-0.5">
-									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
-										<MinusIcon size={22} />
-									</div>
-									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-										<RectangleIcon size={22} />
-									</div>
-									<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
-										<XIcon size={22} />
-									</div>
-
+					{/* icons */}
+					{/* invisible until button clicked */}
+					{visivel && (
+						<div id='skillInfo'>
+							{/* window header */}
+							<div className='flex justify-end pt-1 pb-1 gap-0.5 pe-1 border-2 text-(--color-desert-sand-800) border-s-2 border-end-2 border-t-2'>
+								<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-baseline-last'>
+									<MinusIcon size={22} />
+								</div>
+								<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+									<RectangleIcon size={22} />
+								</div>
+								
+								<div className='flex w-8 h-8 bg-white border-2 rounded justify-center items-center'>
+									<XIcon size={22} />
 								</div>
 								
 							</div>
-							<section className='bg-white text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2' >
-								<div className='flex flex-wrap gap-4 max-w-md'>
-									{items.habilidades.map(
-										(skills)=>(
-											<IconesTootip urlIcon={skills.urlIcon} name={skills.alt} />
-										)
-									)}	
-								</div>
-							</section>
+							{/*  end window header */}
+
+							{/* Icons window */}
+							<section className='flex flex-wrap xl:h-100 lg:h-80 items-center justify-center text-(--color-desert-sand-800) border-s-2 border-e-2 border-b-2 overflow-hidden gap-6 bg-white' >
+								{skillsInfo.map(
+									(skills)=>(
+										<div className='w-20'>
+											<IconesTootip urlIcon={skills.urlIcon} name={skills.alt} /> 
+										</div>
+										
+										
+										
+										
+									)
+								)}	
+								
+							</section> 
+
 						</div>
-					)
-				)}
-				
+					)}
+				</section>
 			</div>
-		
-		
-			
-		</Layout> */}
-	</>
+		</div>
+	</Layout>
+	
     
   )
 }
