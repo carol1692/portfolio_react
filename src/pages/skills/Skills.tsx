@@ -124,7 +124,7 @@ export default function Skills() {
 			<div>
 				<section className='flex flex-col text-(--color-desert-sand-800) gap-2'>
 					{/* buttons */}
-					<div className='xl:h-full lg:h-1/3 grid grid-cols-3 gap-3 bg-white/50 p-6'>
+					<div className='lg:h-1/3 grid grid-cols-3 gap-3 bg-white/50 p-6'>
 						{habilidades.map(
 							(items)=>(
 								<button
