@@ -44,7 +44,7 @@ const habilidades: Habilidades[] = [
 		{ alt: 'Spring Boot', urlIcon: 'https://img.icons8.com/?size=90&id=A3Ulk2RcONKs&format=png&color=000000' },
 		{ alt: 'Hibernate', urlIcon: 'https://ik.imagekit.io/5vd9mfrfv/Hibernate.png ' },
 		{ alt: 'SQLAlchemy', urlIcon: 'https://icon.icepanel.io/Technology/png-shadow-512/SQLAlchemy.png' },
-		{ alt: 'JPA', urlIcon: null }
+		{ alt: 'JPA', urlIcon: '' }
 	]
   },
   {
@@ -53,9 +53,9 @@ const habilidades: Habilidades[] = [
 	habilidades:[
 		{ alt: 'Pytest', urlIcon: 'https://icon.icepanel.io/Technology/svg/pytest.svg' },
 		{ alt: 'JUnit', urlIcon: 'https://icon.icepanel.io/Technology/svg/JUnit.svg' },
-		{ alt: 'SOAP UI', urlIcon: null },
+		{ alt: 'SOAP UI', urlIcon: '' },
 		{ alt: 'Insomnia', urlIcon: 'https://icon.icepanel.io/Technology/svg/Insomnia.svg' },
-		{ alt: 'IBM Tivoli Workload Scheduler (TWS)', urlIcon: null },
+		{ alt: 'IBM Tivoli Workload Scheduler (TWS)', urlIcon: '' },
 		{ alt: 'JIRA', urlIcon: 'https://icon.icepanel.io/Technology/svg/Jira.svg' }
 	]
 
@@ -114,9 +114,19 @@ const habilidades: Habilidades[] = [
 
 export default function Skills() {
 	
-	const [skillsInfo, setSkillsInfo] = useState([])
-	const [visivel, setVisivel] = useState(false);
-	const [categoriaAtiva, setCategoriaAtiva] = useState<string | null>(null);
+	// const [skillsInfo, setSkillsInfo] = useState([])
+	// const [skillsInfo, setSkillsInfo] = useState<Icons[]>([])
+	// const [visivel, setVisivel] = useState(true);
+	// const [categoriaAtiva, setCategoriaAtiva] = useState<string | null>(null);
+	const [skillsInfo, setSkillsInfo] = useState<Icons[]>(
+  		habilidades[0].habilidades
+	);
+
+	const [visivel, setVisivel] = useState(true);
+
+	const [categoriaAtiva, setCategoriaAtiva] = useState(
+	habilidades[0].nomeCategoria
+	);
 	return (
 	
 	<Layout>
