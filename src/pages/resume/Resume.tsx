@@ -2,7 +2,7 @@ import { MinusIcon, RectangleIcon, XIcon } from "@phosphor-icons/react";
 import Layout from "../../components/layout/Layout";
 import { Document, Page, pdfjs } from 'react-pdf'
 import { useState } from "react";
-import pdfFile from "../../assets/Ana Lemos_EN-updated_-2.pdf";
+import pdfFile from "../../assets/Ana Lemos_IT_EN-2.pdf";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
